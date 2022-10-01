@@ -1,0 +1,29 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+  position: fixed;
+}
+
+.title {
+  font-family: 'Bungee', cursive, sans-serif;
+  margin: 1.5em;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weite-new-tweet {
+  margin: 1.5em;
+}
+
+.fa-solid.fa-angles-down {
+  margin: -1.5em;
+  color: red
+}
