@@ -31,6 +31,5 @@ body {
   flex-direction: column;
   align-items: center;
   margin: auto;
-  /* background color should change back to #f4f1ec */
-  background-color: violet
+  background-color: #f4f1ec;
  }
