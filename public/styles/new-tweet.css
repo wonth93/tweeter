@@ -11,6 +11,7 @@ textarea {
   font-weight: bold;
   border: none;
   border-bottom: solid 5px #545149;
+  color: #545149;
 }
 
 .enter-new-tweet-bottom {
@@ -25,7 +26,7 @@ textarea {
   color: #FFFFFF;
 }
 
-.counter {
+output {
   font-family: 'Bungee', cursive, sans-serif;
   margin-right: 0.4em;
 }
