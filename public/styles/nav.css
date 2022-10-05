@@ -11,6 +11,7 @@ nav {
 .title {
   font-family: 'Bungee', cursive, sans-serif;
   margin: 1.5em;
+  cursor: pointer;
 }
 
 .right-side {
@@ -25,5 +26,6 @@ nav {
 
 .fa-solid.fa-angles-down {
   margin: -1.5em;
-  color: red
+  color: red;
+  cursor: pointer;
 }

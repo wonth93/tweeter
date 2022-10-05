@@ -24,6 +24,7 @@ textarea {
   font-family: 'Bungee', cursive, sans-serif;
   background-color: #4056A1;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 output {
