@@ -1,0 +1,39 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  border: solid 4px #545149;
+  padding: 0.7em;
+}
+
+header.user-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: large;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.fa-solid.fa-poo {
+  margin-right: 0.3em;
+}
+
+.handle {
+  color: silver;
+}
+
+p {
+  border-bottom: solid 3.5px #545149;;
+  padding: 0.7em;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: x-small;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: -2em;
+}

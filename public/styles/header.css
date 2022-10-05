@@ -1,4 +1,4 @@
-header {
+.header-profile {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -8,3 +8,7 @@ header {
   background-color: #d19d00;
   background-image: url(https://www.transparenttextures.com/patterns/brick-wall-dark.png);
 } 
+
+.username {
+  margin-top: -1.2em;
+}
