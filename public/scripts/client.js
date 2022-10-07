@@ -8,12 +8,52 @@
 
 
 $(document).ready(function() {
+  
+  // Fake data taken from initial-tweets.json
+const data = [
+  {
+    "user": {
+      "name": "Newton",
+      "avatars": "https://i.imgur.com/73hZDYK.png"
+      ,
+      "handle": "@SirIsaac"
+    },
+    "content": {
+      "text": "If I have seen further it is by standing on the shoulders of giants"
+    },
+    "created_at": 1461116232227
+  },
+  {
+    "user": {
+      "name": "Descartes",
+      "avatars": "https://i.imgur.com/nlhLi3I.png",
+      "handle": "@rd" },
+    "content": {
+      "text": "Je pense , donc je suis"
+    },
+    "created_at": 1461113959088
+  }
+]
+
+
+
+
+  const renderTweets = function(tweets) {
+    for (let article of tweets) {
+      const $tweet = createTweetElement(article);
+      $('#tweet-container').append($tweet);
+    }
+  }
+
+
+
 
   const createTweetElement = function(dataObj) {
+    
     const $tweet = `<article class="tweet">
     <header class="user-info">
     <div>
-      <img src='${dataObj.user.avatars}' class="fa-solid fa-poo"></img>
+      <img src='${dataObj.user.avatars}' class="icon"></img>
       <span>${dataObj.user.name}</span>
     </div>
     <span class="handle">${dataObj.user.handle}</span>
@@ -34,29 +74,14 @@ $(document).ready(function() {
     </div>
   </footer>
     </article>`
+
     return $tweet;
   }
 
 
 
 
-  const tweetData = {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-    "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-    "created_at": 1461116232227
-  }
-  
-  const $tweet = createTweetElement(tweetData);
-  $('#tweet-container').append($tweet);
-  
-
-
+  renderTweets(data);
 
 });
 
@@ -69,4 +94,4 @@ $(document).ready(function() {
 
 
 
-console.log('connect!!')
+console.log('connect clinet.js!!')
