@@ -11,11 +11,35 @@ $(document).ready(function() {
 
   const createTweetElement = function(dataObj) {
     const $tweet = `<article class="tweet">
-    ${dataObj.user.name}
+    <header class="user-info">
+    <div>
+      <img src='${dataObj.user.avatars}' class="fa-solid fa-poo"></img>
+      <span>${dataObj.user.name}</span>
+    </div>
+    <span class="handle">${dataObj.user.handle}</span>
+  </header>
+  <p>${dataObj.content.text}</p>
+  <footer>
+    <span>${dataObj.created_at}</span>
+    <div>
+      <button class="function">
+        <i class="fa-solid fa-flag"></i>
+      </button>
+      <button class="function">
+        <i class="fa-solid fa-retweet"></i>
+      </button>
+      <button class="function">
+        <i class="fa-solid fa-heart"></i>
+      </button>
+    </div>
+  </footer>
     </article>`
     return $tweet;
   }
-  
+
+
+
+
   const tweetData = {
     "user": {
       "name": "Newton",

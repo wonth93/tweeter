@@ -2,7 +2,6 @@
   width: 100%;
 }
 
-
 article.tweet {
   display: flex;
   flex-direction: column;
@@ -22,7 +21,7 @@ header.user-info {
 }
 
 .fa-solid.fa-poo {
-  margin-right: 0.3em;
+  margin-right: 0.5em;
 }
 
 .handle {
