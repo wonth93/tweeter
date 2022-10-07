@@ -1,8 +1,13 @@
-.tweet-container {
+#tweet-container {
+  width: 100%;
+}
+
+
+article.tweet {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin-top: 2em;
+  /* width: 100%; */
+  margin-top: 1em;
   margin-bottom: 1em;
   border: solid 4px #545149;
   padding: 0.7em;
@@ -38,7 +43,7 @@ footer {
   margin-top: -2em;
 }
 
-button {
+button.function {
   border: none;
   color: #545149;
   cursor: pointer;

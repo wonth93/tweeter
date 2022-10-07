@@ -18,6 +18,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .tweet-button {
