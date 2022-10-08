@@ -18,9 +18,6 @@ $(document).ready(function() {
       success: function(tweets) {
         renderTweets(tweets);
       },
-      error: function(error) {
-        console.log(error)
-      }
     });
 
   }
@@ -81,8 +78,20 @@ $(document).ready(function() {
 
 
 
+
+
+
+
+
+
+
+
+
   // Event listener for submit
   const $form = $('.tweeter-form');
+  const errorMsgArea = $("#errorMsgArea");
+  const error = $('#error');
+  error.hide();
   $form.on('submit', function(event) {
     
     // Prevent default form submission behaviour
@@ -94,18 +103,27 @@ $(document).ready(function() {
     // Condition validation
     const tweet = $(this).find('textarea');
     const tweetLength = tweet.val().length;
-    // if (tweetLength === 0) {
-    //   alert('Please enter your tweet!');
-    // } else if (tweetLength > 140) {
-    //   alert('The max length is 140');
-    // } else {
-    // }
+
+    if (tweetLength === 0) {
+      error.slideUp();
+      errorMsgArea.text('Please enter your tweet!');
+      error.slideDown();
+    } else if (tweetLength > 140) {
+      error.slideUp();
+      errorMsgArea.text('Your tweet is too long!')
+      error.slideDown();
+    } else {
+      error.slideUp();
+      $.post('/tweets', serializedData, function(response) {
+        loadTweets();
+      });
+    }
     
-    $.post('/tweets', serializedData, function(response) {
-      loadTweets();
-    })
 
   });
+
+
+
 });
 
 

@@ -53,6 +53,12 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <!-- Error Message Area -->
+        <article id="error">
+          <i class="fa-solid fa-skull-crossbones"></i><i class="fa-solid fa-skull-crossbones"></i>
+          <span id="errorMsgArea"></span>
+        </article>
+        <!-- Create new tweet area -->
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="post" class="tweeter-form">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>          
