@@ -8,6 +8,7 @@
 
 $(document).ready(function() {
 
+  // load tweets from /tweets to home page
   const loadTweets = function() {
     
     $.ajax({
@@ -16,6 +17,9 @@ $(document).ready(function() {
       dataType: 'json',
       success: function(tweets) {
         renderTweets(tweets);
+      },
+      error: function(error) {
+        console.log(error)
       }
     });
 
@@ -25,7 +29,7 @@ $(document).ready(function() {
 
 
 
-
+  // Get all the tweets from a data file
   const renderTweets = function(tweets) {
     $('#tweet-container').empty();
     for (let i = tweets.length - 1; i >= 0; i--) {
@@ -36,7 +40,16 @@ $(document).ready(function() {
 
 
 
+  // Prevent XSS with Escaping
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
 
+
+
+  // Create tweet box element to index.html
   const createTweetElement = function(dataObj) {
     const $tweet = `<article class="tweet">
     <header class="user-info">
@@ -46,7 +59,7 @@ $(document).ready(function() {
     </div>
     <span class="handle">${dataObj.user.handle}</span>
   </header>
-  <p>${dataObj.content.text}</p>
+  <p>${escape(dataObj.content.text)}</p>
   <footer>
     <span>${timeago.format(dataObj.created_at)}</span>
     <div>
@@ -68,25 +81,29 @@ $(document).ready(function() {
 
 
 
-
+  // Event listener for submit
   const $form = $('.tweeter-form');
   $form.on('submit', function(event) {
-    event.preventDefault();
-    const serializedData = $(event.target).serialize();
-    const tweet = $(this).find('textarea');
-    const tweetLength = tweet.val().length
     
+    // Prevent default form submission behaviour
+    event.preventDefault();
 
-    if (tweetLength === 0) {
-      alert('Please enter your tweet!');
-    } else if (tweetLength > 140) {
-      alert('The max length is 140');
-    } else {
-      $.post('/tweets', serializedData, function(response) {
-        loadTweets();
-      })
-    }
-
+    // Serialize the form data
+    const serializedData = $(event.target).serialize();
+    
+    // Condition validation
+    const tweet = $(this).find('textarea');
+    const tweetLength = tweet.val().length;
+    // if (tweetLength === 0) {
+    //   alert('Please enter your tweet!');
+    // } else if (tweetLength > 140) {
+    //   alert('The max length is 140');
+    // } else {
+    // }
+    
+    $.post('/tweets', serializedData, function(response) {
+      loadTweets();
+    })
 
   });
 });
