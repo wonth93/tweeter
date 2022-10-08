@@ -13,3 +13,5 @@ $(document).ready(function() {
     $(this).css('box-shadow', 'none');
   })
 });
+
+console.log('hover.js is connected')
