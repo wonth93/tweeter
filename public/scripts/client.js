@@ -6,6 +6,7 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 
+
 $(document).ready(function() {
 
   // load tweets from /tweets to home page
@@ -33,6 +34,20 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweets[i]);
       $('#tweet-container').append($tweet);
     }
+
+    // hover on and off the footer button
+    $(".function").hover(function() {
+      $(this).css('color', 'orange');
+    }, function() {
+      $(this).css('color', '#545149');
+    })
+  
+    // hover on and off the tweet box; shadow effect
+    $('.tweet').hover(function() {
+      $(this).css('box-shadow', '5px 5px #888888');
+    }, function() {
+      $(this).css('box-shadow', 'none');
+    })
   }
 
 
@@ -123,16 +138,4 @@ $(document).ready(function() {
   });
 
 
-
 });
-
-
-
-
-
-
-
-
-
-
-console.log('client.js is connected')
