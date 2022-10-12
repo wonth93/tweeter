@@ -33,3 +33,18 @@ body {
   margin: auto;
   background-color: #f4f1ec;
  }
+
+/* Tablet Style */
+@media only screen and (max-width: 1023px) {
+  body {
+    min-width: 768px;
+  }
+}
+
+/* Desktop Layout */
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+}

@@ -11,7 +11,6 @@ nav {
 .title {
   font-family: 'Bungee', cursive, sans-serif;
   margin: 1.5em;
-  cursor: pointer;
 }
 
 .right-side {
@@ -27,5 +26,11 @@ nav {
 .fa-solid.fa-angles-down {
   margin: -1.5em;
   color: red;
-  cursor: pointer;
+}
+
+/* Tablet Style */
+@media only screen and (max-width: 1023px) {
+  nav {
+    min-width: 768px;
+  }
 }

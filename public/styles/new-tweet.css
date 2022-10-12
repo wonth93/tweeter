@@ -46,3 +46,13 @@ output {
   color: red;
   margin-right: 0.5em;
 }
+
+/* Desktop Layout */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 90%;
+    margin-top: 6.5em;
+    margin-right: 3em;
+    margin-left: 3em;
+  }
+}

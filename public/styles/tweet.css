@@ -46,3 +46,12 @@ button.function {
   color: #545149;
   cursor: pointer;
 }
+
+/* Desktop Layout */
+@media only screen and (min-width: 1024px) {
+  #tweet-container {
+    width: 90%;
+    margin-right: 3em;
+    margin-left: 3em;
+  }
+}

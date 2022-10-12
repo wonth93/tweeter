@@ -26,9 +26,9 @@ $(document).ready(function() {
   loadTweets();
 
 
-
   // Get all the tweets from a data file
   const renderTweets = function(tweets) {
+    
     $('#tweet-container').empty();
     for (let i = tweets.length - 1; i >= 0; i--) {
       const $tweet = createTweetElement(tweets[i]);
@@ -48,8 +48,8 @@ $(document).ready(function() {
     }, function() {
       $(this).css('box-shadow', 'none');
     })
-  }
 
+  }
 
 
   // Prevent XSS with Escaping
@@ -58,7 +58,6 @@ $(document).ready(function() {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-
 
 
   // Create tweet box element to index.html
@@ -90,16 +89,6 @@ $(document).ready(function() {
 
     return $tweet;
   }
-
-
-
-
-
-
-
-
-
-
 
 
   // Event listener for submit
@@ -134,8 +123,6 @@ $(document).ready(function() {
       });
     }
     
-
   });
-
 
 });
