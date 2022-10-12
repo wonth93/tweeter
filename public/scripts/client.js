@@ -21,7 +21,7 @@ $(document).ready(function() {
       },
     });
 
-  }
+  };
 
   loadTweets();
 
@@ -40,16 +40,16 @@ $(document).ready(function() {
       $(this).css('color', 'orange');
     }, function() {
       $(this).css('color', '#545149');
-    })
+    });
   
     // hover on and off the tweet box; shadow effect
     $('.tweet').hover(function() {
       $(this).css('box-shadow', '5px 5px #888888');
     }, function() {
       $(this).css('box-shadow', 'none');
-    })
+    });
 
-  }
+  };
 
 
   // Prevent XSS with Escaping
@@ -85,10 +85,10 @@ $(document).ready(function() {
       </button>
     </div>
   </footer>
-    </article>`
+    </article>`;
 
     return $tweet;
-  }
+  };
 
 
   // Event listener for submit
@@ -114,7 +114,7 @@ $(document).ready(function() {
       error.slideDown();
     } else if (tweetLength > 140) {
       error.slideUp();
-      errorMsgArea.text('Your tweet is too long!')
+      errorMsgArea.text('Your tweet is too long!');
       error.slideDown();
     } else {
       error.slideUp();
