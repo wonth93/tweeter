@@ -96,6 +96,7 @@ $(document).ready(function() {
   const errorMsgArea = $("#errorMsgArea");
   const error = $('#error');
   error.hide();
+  
   $form.on('submit', function(event) {
     
     // Prevent default form submission behaviour
@@ -107,6 +108,7 @@ $(document).ready(function() {
     // Condition validation
     const tweet = $(this).find('textarea');
     const tweetLength = tweet.val().length;
+    
 
     if (tweetLength === 0) {
       error.slideUp();
@@ -121,8 +123,9 @@ $(document).ready(function() {
       $.post('/tweets', serializedData, function(response) {
         loadTweets();
       });
+      // empty textbox after post
+      tweet.val('');
     }
-    
   });
-
+  
 });
